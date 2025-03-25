@@ -2,6 +2,15 @@ let timer; // intializing the time...
 let totalSecond = 0;
 let runningState = false; // initialy the running state of time is false
 let runningTime;
+
+let quotes = [
+    {quote : "Coding is like poetry, it should be short and concise...."},
+    {quote : "Any fool can write code that a computer can understand, Good programmers write code that humans can understand."},
+    {quote : "Programming is the art of telling another human being what one wants the computer to do."},
+    {quote : "If debugging is the process of removing bugs, then programming must be the process of putting them in."},
+    {quote : "Clean code always looks like it was written by someone who cares."},
+]
+
 document.getElementById("start").addEventListener("click", () => { // when we click on start if the timer is already running then it will prevent
     if (runningState) return; // it will prevent from running setTime() function twice....
     setTime(); // calling the function (if the running state is false then it will runn the code)....
@@ -56,6 +65,15 @@ function displayTimer() {
             document.getElementById("sec").value = "";
             runningState = false;
             clearInterval(timer);
+
+            let thougth = parseInt(Math.random() * 5)
+
+            Swal.fire({
+                title: `${quotes[thougth].quote}`,
+                text: "Jay Ho....",
+                icon: "success",
+                backdrop: false
+            });
 
             // Confetti js
 
